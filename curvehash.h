@@ -7,7 +7,7 @@ extern "C" {
 
 #include <stdint.h>
 
-void curve_hash(const unsigned char* input,unsigned char* output, uint32_t len);
+void curve_hash(const unsigned char* data, unsigned char* hash, int len);
 
 #ifdef __cplusplus
 }
