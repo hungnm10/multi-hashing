@@ -30,6 +30,7 @@ extern "C" {
     #include "x16r.h"
     #include "x16rv2.h"
     #include "neoscrypt.h"
+    #include "curvehash.h"
 }
 
 #include "boolberry.h"
@@ -129,6 +130,7 @@ using namespace v8;
  DECLARE_CALLBACK(x15, x15_hash, 32);
  DECLARE_CALLBACK(x16r, x16r_hash, 32);
  DECLARE_CALLBACK(x16rv2, x16rv2_hash, 32);
+ DECLARE_CALLBACK(curvehash, curve_hash, 32);
 
 
 DECLARE_FUNC(scrypt) {
@@ -382,6 +384,7 @@ DECLARE_INIT(init) {
     NODE_SET_METHOD(exports, "x16r", x16r);
     NODE_SET_METHOD(exports, "x16rv2", x16rv2);
     NODE_SET_METHOD(exports, "neoscrypt", neoscrypt);
+    NODE_SET_METHOD(exports, "curvehash", curvehash);
 }
 
 NODE_MODULE(multihashing, init)
