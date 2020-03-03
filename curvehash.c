@@ -158,7 +158,7 @@ static inline void sha256_transform_volatile(uint32_t *state, uint32_t *block)
     for (i = 0; i < 8; i++)
         state[i] += S[i];
 }
-void curve_hash(const unsigned char *data, unsigned char *hash, int len)
+void curve_hash(const char *data, char *hash, uint32_t len)
 {
     uint32_t _ALIGN(64) S[16];
     uint32_t _ALIGN(64) T[64];
